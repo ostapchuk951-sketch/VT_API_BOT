@@ -1,0 +1,17 @@
+services:
+  - type: worker          # background worker, no HTTP port needed
+    name: virustotal-bot
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free            # change to "starter" for always-on
+
+    # Environment variables — set real values in Render dashboard
+    envVars:
+      - key: BOT_TOKEN
+        sync: false       # filled manually in Render UI
+      - key: BOT_USERNAME
+        sync: false
+      - key: VIRUSTOTAL_API_KEY
+        sync: false
+      - key: MAX_FILE_SIZE_MB
+        value: "32"
