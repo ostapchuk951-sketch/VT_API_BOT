@@ -19,7 +19,7 @@ public class VirusTotalService {
 
     private static final String VT_BASE = "https://www.virustotal.com/api/v3";
     private static final int POLL_INTERVAL_MS = 5000;
-    private static final int MAX_POLLS = 24; // 2 minutes max
+    private static final int MAX_POLLS = 60; // 2 minutes max
 
     private final String apiKey;
     private final OkHttpClient http;
